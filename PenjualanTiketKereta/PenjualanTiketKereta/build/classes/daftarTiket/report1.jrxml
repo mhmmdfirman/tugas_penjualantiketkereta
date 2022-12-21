@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="068ab03d-6b3d-44d2-aeed-2557b6c702f8">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[select * from kereta]]>
+	</queryString>
+	<field name="noTiket" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="namaKereta" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="stasiunTujuan" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="jumlahTiket" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="harga" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<variable name="noTiket_1" class="java.lang.Integer" resetType="Column" calculation="Count">
+		<variableExpression><![CDATA[$F{noTiket}]]></variableExpression>
+	</variable>
+	<variable name="harga_1" class="java.lang.Integer" resetType="Column" calculation="Sum">
+		<variableExpression><![CDATA[$F{harga}]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="555" height="79" forecolor="#FF0033" uuid="e9a4382e-e64b-49b8-8ffc-34dc16df0850"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial Black" size="20"/>
+				</textElement>
+				<text><![CDATA[   Daftar Tiket Kereta]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="51" splitType="Stretch">
+			<staticText>
+				<reportElement x="465" y="20" width="71" height="20" uuid="00bd9849-150a-4d5e-9d22-d32b08a4fa08"/>
+				<text><![CDATA[HARGA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="326" y="20" width="100" height="20" uuid="6afc1caa-3a53-423b-9d33-638cc8ac1c57"/>
+				<text><![CDATA[JUMLAH TIKET]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="212" y="20" width="90" height="20" uuid="ede41ac6-dd48-477e-a384-da494080426a"/>
+				<text><![CDATA[STASIUN TUJUAN]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="88" y="20" width="64" height="20" uuid="537bf53e-1ddd-4ca3-a42f-05ee9643f29a"/>
+				<text><![CDATA[NAMA KERETA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="20" width="53" height="20" uuid="1ee65040-ffb8-4af7-99cf-2ff389149b7e"/>
+				<text><![CDATA[NO TIKET]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="60" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="3" width="53" height="20" uuid="2243af19-d8a1-4622-acf4-f08ca335f68f"/>
+				<textFieldExpression><![CDATA[$F{noTiket}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="88" y="0" width="64" height="20" uuid="3d2b6a66-6bf5-45d0-b564-67c244084951"/>
+				<textFieldExpression><![CDATA[$F{namaKereta}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="212" y="3" width="90" height="20" uuid="3333cb9f-7dfd-4944-9977-7702751e8aa9"/>
+				<textFieldExpression><![CDATA[$F{stasiunTujuan}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="326" y="0" width="100" height="20" uuid="fa04bd86-10b2-429a-a78a-6f973894bdb4"/>
+				<textFieldExpression><![CDATA[$F{jumlahTiket}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="465" y="0" width="71" height="20" uuid="794db207-8ac0-478c-acdd-672e60d747da"/>
+				<textFieldExpression><![CDATA[$F{harga}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="8" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
